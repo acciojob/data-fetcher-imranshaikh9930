@@ -19,7 +19,7 @@ const App = () => {
         })
         .then((data) => {
           if (data && data.products) {
-            console.log(data.products);
+            // console.log(data.products);
             setProduct(data.products);
           }
           setLoading(false);
