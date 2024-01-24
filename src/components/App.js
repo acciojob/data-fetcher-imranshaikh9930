@@ -4,7 +4,7 @@ import './../styles/App.css';
 
 const App = () => {
 
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   // Fetch data when the component mounts for the first time
@@ -37,12 +37,13 @@ const App = () => {
     <div id="root">
       <h1>Data Fetched from API</h1>
       {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
+      {error && <p>No data found</p>}
       {product && (
         <div>
           <pre>{JSON.stringify(product, null, 2)}</pre>
         </div>
       )}
+
     </div>
   );
 }
