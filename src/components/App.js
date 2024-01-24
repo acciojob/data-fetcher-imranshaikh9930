@@ -25,7 +25,7 @@ const App = () => {
           setLoading(false);
         })
         .catch((err) => {
-          setError(err.message);
+          setError(`An error occurred: ${err.message}`);
           setLoading(false);
         });
     };
@@ -34,9 +34,10 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div id="root">
+      <h1>Data Fetched from API</h1>
       {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
+      {error && <p>{error}</p>}
       {product && (
         <div>
           <pre>{JSON.stringify(product, null, 2)}</pre>
